@@ -6,7 +6,6 @@ const Cat = mongoose.model("Cat", { name: String });
 const kitty = new Cat({ name: "Zildjian" });
 kitty.save().then(() => console.log("meow"));
 
-
 const movieSchema = new mongoose.Schema({
     title: String,
     year: Number,
@@ -16,6 +15,7 @@ const movieSchema = new mongoose.Schema({
 
 const movie = mongoose.model('Movie', movieSchema);
 const amadeus = new movie({title: 'Amadeus', year: 1986, score: 9.2, rating: "R"});
+amadeus.save();
 
 movie.insertMany([
     {title: 'Amadeus', year: 1986, score: 9.2, rating: "R"},
